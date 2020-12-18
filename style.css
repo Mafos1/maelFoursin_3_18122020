@@ -1,0 +1,19 @@
+.gps {
+  display: flex;
+  align-items: center;
+}
+.gps h3 {
+  margin-left: 15px;
+}
+
+#restau .restau__card img {
+  width: 360px;
+  height: 236px;
+}
+
+footer img {
+  width: 60px;
+  height: 36px;
+}
+
+/*# sourceMappingURL=style.css.map */
