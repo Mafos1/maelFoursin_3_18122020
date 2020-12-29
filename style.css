@@ -18,7 +18,7 @@
 #how .how__btn--3, #how .how__btn {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  width: 350px;
+  width: 310px;
   height: 75px;
   padding: 16px;
   box-shadow: #d8d8d8 1px 5px 5px;
@@ -43,6 +43,13 @@
   padding-left: 30px;
   font-size: 20px;
   color: grey;
+}
+
+#restau .restau__card--new, #restau h5, #restau .far, #restau h6 {
+  z-index: 1;
+  position: absolute;
+  font-size: 16px;
+  color: black;
 }
 
 html {
@@ -128,8 +135,8 @@ h2 {
   left: 30px;
   margin-top: 12px;
 }
-#how .how__btn .how_btn--num {
-  left: 100px;
+#how .how__btn .how__btn--num {
+  left: 10px;
 }
 #how .how__btn--3 {
   background: linear-gradient(#f5ecff, #f9f5ff);
@@ -137,18 +144,89 @@ h2 {
 #how .how__btn--3 .how__btn--icon {
   color: #9356DC;
 }
+#how .how__btn--3 .how__btn--num {
+  left: 10px;
+}
 #how .how__btn--txt {
   font-weight: bold;
 }
 
+#restau {
+  background-color: #f7f7f7;
+  margin-top: 70px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#restau .restau__card {
+  position: relative;
+  margin-top: 25px;
+}
 #restau .restau__card img {
-  width: 360px;
-  height: 236px;
+  width: 320px;
+  height: 206px;
+  object-fit: fill;
+  border-radius: 10%, 10%, 0, 0;
+  line-height: 800px;
+  border-top: 10px none #f7f7f7;
+  border-bottom: 80px solid #f1f1f1;
+  overflow: hidden;
+  border-radius: 11px 11px 11px 11px;
+  box-shadow: 2px 8px 8px 0px rgba(202, 202, 202, 0.75);
+}
+#restau h6 {
+  font-weight: lighter;
+  left: 10px;
+  top: 215px;
+}
+#restau .far {
+  font-weight: bold;
+  left: 280px;
+  top: 235px;
+  font-size: 22px;
+}
+#restau h5 {
+  font-weight: bold;
+  left: 10px;
+  top: 200px;
+}
+#restau .restau__card--new {
+  color: #049b3e;
+  font-weight: bold;
+  left: 230px;
+  top: 20px;
+  display: inline-block;
+  width: 80px;
+  height: 20px;
+  border: none;
+  text-align: center;
+  background-color: #13ebaa;
+  border-radius: 10%;
 }
 
-footer img {
-  width: 60px;
-  height: 36px;
+footer {
+  margin-top: 40px;
+  background-color: #525252;
+}
+footer p {
+  padding-top: 8px;
+  color: white;
+  font-family: Shrikhand;
+  font-size: 25px;
+  font-style: lighter;
+  margin-left: 25px;
+}
+
+li {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  margin-left: -15px;
+  list-style: none;
+  margin-top: 8px;
 }
 
 /*# sourceMappingURL=style.css.map */
