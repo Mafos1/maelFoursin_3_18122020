@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
 
+div {
+   border: 1px solid green;
+}
+
 $first: #9356DC;
 $second: #FF79DA;
 $third: #99E2D0;
@@ -75,6 +79,7 @@ html {
    
    a:link { 
       text-decoration:none; 
+      
    } 
 
    font-family: 'Roboto', sans-serif;
@@ -257,12 +262,18 @@ h2 {
       top: 235px;
       font-size: 22px;
 
-      &:active {
-         background-color: red;
-         transition: 0.5s ease-in-out;
-      }
       
     }
+
+    .full{
+       opacity: 0;
+       color: green!important;
+      &:active {
+         opacity: 1;
+         transition: 0.2s ease-in-out;
+      }
+    }
+
     h5 {
       @extend %cardTxt;
       font-weight: bold;
@@ -277,11 +288,12 @@ h2 {
       top: 20px;
       display: inline-block;
       width: 80px;
-      height: 20px;
+      height: 30px;
       border: none;
       text-align: center;
       background-color: $third;
       border-radius: 10%;
+      line-height: 30px;
     }
 }
 
@@ -361,6 +373,17 @@ footer {
 .course{
    margin-left: 15px;
 
+   .chien {
+      display: flex;
+
+      .course_11 {
+         width: 70%;
+      }
+      .price_11 {
+         width: 10%;
+      }
+   }
+
    .course__type {
    text-transform: uppercase;
    display:inline-block;
@@ -382,6 +405,9 @@ footer {
       width: 340px;
       height: 65px;
 
+      
+
+
       .course__1 {
          justify-content: flex-start;
          font-size: 15px;
@@ -396,7 +422,9 @@ footer {
       
    }
 
-   h1 {
+   
+
+   h5 {
       font-size: 15px;
       margin-left: 10px;
       padding-top: 10px;
@@ -425,3 +453,4 @@ footer {
       @extend %btnPink;
    }  
 }
+
