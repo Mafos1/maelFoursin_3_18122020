@@ -76,6 +76,49 @@ $footer : rgb(82, 82, 82);
    color:black;
 }
 
+%menu_Cards {
+   .form {
+      display: flex;
+      .form__line {
+         width: 70%;
+         .line1 {
+         padding-left: 11px;
+         padding-top: 11px;
+         font-weight: bold;
+         font-size: 17px;
+         }
+         .line2 {
+            padding-left: 11px;
+            padding-top: 5px;
+            font-size: 12px;
+         }
+      }
+      .price {
+         width: 0%;
+         padding-left: 55px;
+         padding-top: 30px;
+         font-weight: bold;
+      }
+   }
+}
+
+%menu_Course {
+   .course__type {
+      text-transform: uppercase;
+      display:inline-block;
+      position:relative;
+      }
+      .course__type::after {
+         content:'';
+         height:3px;
+         width:60%;
+         background: $third;
+         position:absolute;
+         left:calc(10% - 10%);
+         bottom:-5px;
+      } 
+}
+
 //-----//
 
 html {
@@ -163,7 +206,7 @@ header {
    h2 {
       display: flex;
       justify-content: center;
-      margin-left: 1.1em;
+      margin-left: -6.1em;
    }
 
    .how__box {
@@ -238,6 +281,11 @@ header {
 
 
 #restau {
+   
+   h2 {
+      margin-left: -7.6em;
+   }
+
    background-color: $greyBG;
    margin-top: 70px;
    padding-top: 30px;
@@ -245,10 +293,13 @@ header {
    justify-content: center;
    align-items: center;  
    flex-direction: column;
+   
 
    .restau__card {
       position: relative;
       margin-top: 25px;
+
+      
      }
    .restau__card img{
       width : 320px;
@@ -261,6 +312,11 @@ header {
       overflow: hidden;
       border-radius: 11px 11px 11px 11px;
       box-shadow: 2px 8px 8px 0px rgba(202, 202, 202, 0.75);
+
+      &:hover {
+         background:linear-gradient(#fff6fc, #fddaf3);
+         box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(240, 104, 240) 0px 0px 18px;
+      }
     }
     h6 {
       @extend %cardTxt;
@@ -361,7 +417,7 @@ footer {
       .restauName {
          margin-left: 15px;
          font-family: Shrikhand;
-         font-size: 28px;
+         font-size: 25px;
          display: flex;
 
          .heart {
@@ -373,76 +429,71 @@ footer {
 
 
 
+%menu_Cards {
+   .form {
+      display: flex;
+      .form__line {
+         width: 70%;
+         .line1 {
+         padding-left: 11px;
+         padding-top: 11px;
+         font-weight: bold;
+         }
+         .line2 {
+            padding-left: 11px;
+            padding-top: 5px;
+         }
+      }
+      .price {
+         width: 0%;
+         padding-left: 55px;
+         padding-top: 30px;
+         font-weight: bold;
+      }
+   }
+}
 
-////////////////////////////////
+%menu_Course {
+   .course__type {
+      text-transform: uppercase;
+      display:inline-block;
+      position:relative;
+      }
+      .course__type::after {
+         content:'';
+         height:3px;
+         width:60%;
+         background: $third;
+         position:absolute;
+         left:calc(10% - 10%);
+         bottom:-5px;
+      } 
+}
 
-.course{
+
+.menu {
+   background-color: $greyBG;
+}
+
+.course {
+   @extend %menu_Cards; 
+   @extend %menu_Course;
    margin-left: 15px;
 
-   .chien {
-      display: flex;
-
-      .course_11 {
-         width: 70%;
-      }
-      .price_11 {
-         width: 10%;
-      }
-   }
-
-   .course__type {
-   text-transform: uppercase;
-   display:inline-block;
-   position:relative;
-   }
-   .course__type::after {
-      content:'';
-      height:3px;
-      width:60%;
-      background: $third;
-      position:absolute;
-      left:calc(10% - 10%);
-      bottom:-5px;
-   }
-
+   
    .course__type--plate {
-      background-color: red;
+      background-color: white;
+      box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(202, 202, 202) 0px 0px 18px;
       border-radius: 15px;
       width: 340px;
       height: 65px;
-
-      
-      .course__1 {
-         justify-content: flex-start;
-         font-size: 15px;
-         font-weight: bold;
-         
-      }
-      .course__2 {
-         line-height: -50px;
-         padding-bottom: 20px;
-      }
-      
-      
+      margin-top: 1em;
    }
-
-   
-
-   h5 {
-      font-size: 15px;
-      margin-left: 10px;
-      padding-top: 10px;
-   }
-   h6 {
-      margin-left: 10px;
-      padding-top: -100px;
-      line-height: -30px;
-   }
-
 }
 
 
 
+//////////////////////////////////////////
 
 .order {
 

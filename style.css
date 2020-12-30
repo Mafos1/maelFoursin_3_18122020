@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
-div {
-  border: 1px solid green;
-}
-
 .order .order__btn, .book .btnPink {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
@@ -24,10 +20,10 @@ div {
   box-shadow: inset #ffffff 0px 0px 0px 0px, #c012c0 0px 0px 35px;
 }
 
-#how .how__btn--3, #how .how__btn {
+#how .how__btn--3, #how .how__btn, #how .how__box .how__btn--3 {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  width: 310px;
+  width: 321px;
   height: 75px;
   padding: 16px;
   box-shadow: #d8d8d8 1px 5px 5px;
@@ -37,9 +33,14 @@ div {
   vertical-align: middle;
   font-size: 16px;
   border-style: none;
+  left: 50px;
+}
+#how .how__btn--3:hover, #how .how__btn:hover {
+  background: linear-gradient(#fff6fc, #fddaf3);
+  box-shadow: inset #ffffff 0px 0px 0px 0px, #c012c0 0px 0px 35px;
 }
 
-#how .how__btn--3, #how .how__btn {
+#how .how__btn--3, #how .how__btn, #how .how__box .how__btn--3 {
   display: flex;
   flex-direction: row;
   text-decoration: none;
@@ -47,7 +48,7 @@ div {
   line-height: 3.5em;
 }
 
-#how .how__btn--3 .how__btn--icon, #how .how__btn .how__btn--icon {
+#how .how__btn--3 .how__btn--icon, #how .how__box .how__btn--3 .how__btn--icon, #how .how__box .how__btn--icon {
   padding-right: 30px;
   padding-left: 30px;
   font-size: 20px;
@@ -61,12 +62,54 @@ div {
   color: black;
 }
 
+.course .form {
+  display: flex;
+}
+.course .form .form__line {
+  width: 70%;
+}
+.course .form .form__line .line1 {
+  padding-left: 11px;
+  padding-top: 11px;
+  font-weight: bold;
+  font-size: 17px;
+}
+.course .form .form__line .line2 {
+  padding-left: 11px;
+  padding-top: 5px;
+  font-size: 12px;
+}
+.course .form .price {
+  width: 0%;
+  padding-left: 55px;
+  padding-top: 30px;
+  font-weight: bold;
+}
+
+.course .course__type {
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+}
+.course .course__type::after {
+  content: "";
+  height: 3px;
+  width: 60%;
+  background: #99E2D0;
+  position: absolute;
+  left: calc(10% - 10%);
+  bottom: -5px;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
 }
 html a:link {
   text-decoration: none;
+}
+html a:active {
+  color: inherit;
 }
 
 body {
@@ -107,16 +150,6 @@ header .logo {
   margin-top: -20px;
   padding-bottom: 100px;
   font-family: "Roboto", sans-serif;
-  /*
-    .btnPink:active {
-       box-shadow:inset #ffffff 0px 5px 8px -1px,#d6d6d6 1px 0 2px;
-       position:relative;
-       top:3px
-    }
-    .btnPink:hover {
-       background:#c9bdbd;
-       background:linear-gradient(#732c9c, #ee74f7);
-    }*/
 }
 .book h2 {
   text-align: center;
@@ -133,10 +166,29 @@ header .logo {
   display: block;
   margin: 0 auto;
 }
-h2 {
-  margin-left: 1.1em;
+#how h2 {
+  display: flex;
+  justify-content: center;
+  margin-left: -6.1em;
 }
-
+#how .how__box .how__btn--num {
+  left: -30px;
+  position: relative;
+}
+#how .how__box .how__btn--icon {
+  position: relative;
+  left: -40px;
+}
+#how .how__box strong {
+  position: relative;
+  left: -30px;
+}
+#how .how__box .how__btn--3 {
+  background: linear-gradient(#f5ecff, #f9f5ff);
+}
+#how .how__box .how__btn--3 .how__btn--icon {
+  color: #9356DC;
+}
 #how button {
   display: block;
   margin: 0 auto;
@@ -154,20 +206,20 @@ h2 {
   left: 30px;
   margin-top: 12px;
 }
-#how .how__btn .how__btn--num {
-  left: 10px;
-}
 #how .how__btn--3 {
   background: linear-gradient(#f5ecff, #f9f5ff);
+}
+#how .how__btn--3:hover {
+  background: linear-gradient(#fff6fc, #fddaf3);
+  box-shadow: inset #ffffff 0px 0px 0px 0px, #c012c0 0px 0px 35px;
 }
 #how .how__btn--3 .how__btn--icon {
   color: #9356DC;
 }
-#how .how__btn--3 .how__btn--num {
-  left: 10px;
-}
 #how .how__btn--txt {
   font-weight: bold;
+  position: relative;
+  left: -40px;
 }
 
 #restau {
@@ -178,6 +230,9 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+#restau h2 {
+  margin-left: -7.6em;
 }
 #restau .restau__card {
   position: relative;
@@ -195,6 +250,10 @@ h2 {
   border-radius: 11px 11px 11px 11px;
   box-shadow: 2px 8px 8px 0px rgba(202, 202, 202, 0.75);
 }
+#restau .restau__card img:hover {
+  background: linear-gradient(#fff6fc, #fddaf3);
+  box-shadow: inset #ffffff 0px 0px 0px 0px, #f068f0 0px 0px 18px;
+}
 #restau h6 {
   font-weight: lighter;
   left: 10px;
@@ -208,11 +267,11 @@ h2 {
 }
 #restau .full {
   opacity: 0;
-  color: green !important;
+  color: #9356DC;
 }
 #restau .full:active {
   opacity: 1;
-  transition: 0.2s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 #restau h5 {
   font-weight: bold;
@@ -288,7 +347,7 @@ li {
 .menu .restauName {
   margin-left: 15px;
   font-family: Shrikhand;
-  font-size: 28px;
+  font-size: 25px;
   display: flex;
 }
 .menu .restauName .heart {
@@ -296,18 +355,28 @@ li {
   margin-top: 25px;
 }
 
-.course {
-  margin-left: 15px;
-}
-.course .chien {
+.course .form {
   display: flex;
 }
-.course .chien .course_11 {
+.course .form .form__line {
   width: 70%;
 }
-.course .chien .price_11 {
-  width: 10%;
+.course .form .form__line .line1 {
+  padding-left: 11px;
+  padding-top: 11px;
+  font-weight: bold;
 }
+.course .form .form__line .line2 {
+  padding-left: 11px;
+  padding-top: 5px;
+}
+.course .form .price {
+  width: 0%;
+  padding-left: 55px;
+  padding-top: 30px;
+  font-weight: bold;
+}
+
 .course .course__type {
   text-transform: uppercase;
   display: inline-block;
@@ -322,30 +391,21 @@ li {
   left: calc(10% - 10%);
   bottom: -5px;
 }
+
+.menu {
+  background-color: #f7f7f7;
+}
+
+.course {
+  margin-left: 15px;
+}
 .course .course__type--plate {
-  background-color: red;
+  background-color: white;
+  box-shadow: inset #ffffff 0px 0px 0px 0px, #cacaca 0px 0px 18px;
   border-radius: 15px;
   width: 340px;
   height: 65px;
-}
-.course .course__type--plate .course__1 {
-  justify-content: flex-start;
-  font-size: 15px;
-  font-weight: bold;
-}
-.course .course__type--plate .course__2 {
-  line-height: -50px;
-  padding-bottom: 20px;
-}
-.course h5 {
-  font-size: 15px;
-  margin-left: 10px;
-  padding-top: 10px;
-}
-.course h6 {
-  margin-left: 10px;
-  padding-top: -100px;
-  line-height: -30px;
+  margin-top: 1em;
 }
 
 .order button {
