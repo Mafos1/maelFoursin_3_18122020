@@ -6,17 +6,20 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
    <link rel="stylesheet" href="style.css">
-    <title>A la francaise</title>
+    <title>La palette du goût</title>
 </head>
 
 <body>
 
     <header>
         <div class="title">
+            <a href="./index.html">
+            <div class="arrow">
             <i class="fa fa-arrow-left"></i>
-            <img src="./images/logo/ohmyfood.png" alt="ohMyFood">
+            </div> </a>
+           <img class="logo " src="./images/logo/ohmyfood.png" alt="ohMyFood">
         </div>
-    </header>
+     </header>
 
     <section class="backGround">
         <img src="./images/restaurants/resto3.jpg" alt="frenchRestaurant">
@@ -114,18 +117,22 @@
                     </div>
             </div>        
         </div>
-
-        <button class="btnPink">Commander</button>
-
+        <div class="order">
+            <a href="#">
+                <button class="order__btn">Commander</button>
+            </a>
+            </div>
+        </div>    
+    
     </section>
-
+    
     <footer>
-        <img src="./images/logo/ohmyfood.png" alt="ohMyFood">
+        <p>ohmyfood</p>
         <ul>
-           <li><i class="far fa-utensils"></i>Proposer un restaurant</li>
-           <li><i class="far fa-handshake"></i>Devenir partenaire</li>
+           <li><i class="fas fa-utensils">&ensp;&ensp;</i>Proposer un restaurant</li>
+           <li><i class="far fa-handshake">&ensp;</i>Devenir partenaire</li>
            <li>Mentions légales</li>
-           <li>Contact</li>
+           <li><a href="mailto:#@.com" class="contact">Contact</a></li>
         </ul>
      </footer>
 

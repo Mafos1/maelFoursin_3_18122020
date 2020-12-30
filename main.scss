@@ -21,7 +21,15 @@ $footer : rgb(82, 82, 82);
 	color:#ffffff;
 	border-color: $greyText;
    border-width:0px;
+
+      &:hover {
+         background:#c9bdbd;
+         background:linear-gradient(#fc69d2, #e93fb9);
+         box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(192, 18, 192) 0px 0px 35px;
+      }
 }
+   
+   
 
 %how__btn {
    text-decoration: none;
@@ -64,7 +72,7 @@ $footer : rgb(82, 82, 82);
 
 html {
    scroll-behavior: smooth;
-
+   
    a:link { 
       text-decoration:none; 
    } 
@@ -137,6 +145,16 @@ header {
    .btnPink {
       @extend %btnPink;
    }  
+ /*
+   .btnPink:active {
+      box-shadow:inset #ffffff 0px 5px 8px -1px,#d6d6d6 1px 0 2px;
+      position:relative;
+      top:3px
+   }
+   .btnPink:hover {
+      background:#c9bdbd;
+      background:linear-gradient(#732c9c, #ee74f7);
+   }*/
 }
 
 // MAIN //
@@ -232,12 +250,18 @@ h2 {
       left: 10px;
       top: 215px;
     }
-    .far {
+    .heart {
       @extend %cardTxt;
       font-weight: bold;
       left: 280px;
       top: 235px;
       font-size: 22px;
+
+      &:active {
+         background-color: red;
+         transition: 0.5s ease-in-out;
+      }
+      
     }
     h5 {
       @extend %cardTxt;
@@ -256,15 +280,15 @@ h2 {
       height: 20px;
       border: none;
       text-align: center;
-      background-color: rgb(19, 235, 170);
+      background-color: $third;
       border-radius: 10%;
     }
-    
 }
 
 footer {
    margin-top: 40px;
    background-color: $footer;
+   padding-bottom: 10px;
 
    p {
    padding-top: 8px;
@@ -274,7 +298,13 @@ footer {
    font-style: lighter;
    margin-left: 25px;
    }
+   .contact {
+      color: white;
+   }
+
 }
+
+
     
    li {
    color: white;
@@ -284,5 +314,114 @@ footer {
    margin-left: -15px;
    list-style: none;
    margin-top: 8px;
+
+}
+
+// MENUS // 
+
+
+.arrow {
+   position: absolute;
+   color: black;
+   left: 10px;
+   top: 23px;
+   font-weight: bold;
+}
+
+.backGround img {
+   width: 375px;
+   height: 200px;
+   position: relative;
+   z-index: 5;
+}
+
+
+.menu {
+   background-color: $greyBG;
+   z-index: 10;
+   padding-top: 25px;
+   position: relative;
+   top: -50px;
+   border-radius: 42px 41px 0px 0px;
+   max-width: 375px;
+   
+      .restauName {
+         margin-left: 15px;
+         font-family: Shrikhand;
+         font-size: 28px;
+         display: flex;
+
+         .heart {
+            margin-left: 70px;
+            margin-top: 25px;
+         }
+   }
+}
+
+.course{
+   margin-left: 15px;
+
+   .course__type {
+   text-transform: uppercase;
+   display:inline-block;
+   position:relative;
+   }
+   .course__type::after {
+      content:'';
+      height:3px;
+      width:60%;
+      background: $third;
+      position:absolute;
+      left:calc(10% - 10%);
+      bottom:-5px;
    }
 
+   .course__type--plate {
+      background-color: red;
+      border-radius: 15px;
+      width: 340px;
+      height: 65px;
+
+      .course__1 {
+         justify-content: flex-start;
+         font-size: 15px;
+         font-weight: bold;
+         
+      }
+      .course__2 {
+         line-height: -50px;
+         padding-bottom: 20px;
+      }
+      
+      
+   }
+
+   h1 {
+      font-size: 15px;
+      margin-left: 10px;
+      padding-top: 10px;
+   }
+   h6 {
+      margin-left: 10px;
+      padding-top: -100px;
+      line-height: -30px;
+   }
+
+}
+
+
+
+
+.order {
+
+    button {
+       
+      text-decoration: none;
+      display: block;
+      margin: 0 auto;
+   }
+   .order__btn {
+      margin-top: 3.5em;
+      @extend %btnPink;
+   }  
+}

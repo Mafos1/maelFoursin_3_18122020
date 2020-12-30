@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
-.book .btnPink {
+.order .order__btn, .book .btnPink {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   width: 230px;
@@ -13,6 +13,11 @@
   color: #ffffff;
   border-color: #3a3a3a;
   border-width: 0px;
+}
+.order .order__btn:hover, .book .btnPink:hover {
+  background: #c9bdbd;
+  background: linear-gradient(#fc69d2, #e93fb9);
+  box-shadow: inset #ffffff 0px 0px 0px 0px, #c012c0 0px 0px 35px;
 }
 
 #how .how__btn--3, #how .how__btn {
@@ -45,7 +50,7 @@
   color: grey;
 }
 
-#restau .restau__card--new, #restau h5, #restau .far, #restau h6 {
+#restau .restau__card--new, #restau h5, #restau .heart, #restau h6 {
   z-index: 1;
   position: absolute;
   font-size: 16px;
@@ -98,6 +103,16 @@ header .logo {
   margin-top: -20px;
   padding-bottom: 100px;
   font-family: "Roboto", sans-serif;
+  /*
+    .btnPink:active {
+       box-shadow:inset #ffffff 0px 5px 8px -1px,#d6d6d6 1px 0 2px;
+       position:relative;
+       top:3px
+    }
+    .btnPink:hover {
+       background:#c9bdbd;
+       background:linear-gradient(#732c9c, #ee74f7);
+    }*/
 }
 .book h2 {
   text-align: center;
@@ -181,11 +196,15 @@ h2 {
   left: 10px;
   top: 215px;
 }
-#restau .far {
+#restau .heart {
   font-weight: bold;
   left: 280px;
   top: 235px;
   font-size: 22px;
+}
+#restau .heart:active {
+  background-color: red;
+  transition: 0.5s ease-in-out;
 }
 #restau h5 {
   font-weight: bold;
@@ -202,13 +221,14 @@ h2 {
   height: 20px;
   border: none;
   text-align: center;
-  background-color: #13ebaa;
+  background-color: #99E2D0;
   border-radius: 10%;
 }
 
 footer {
   margin-top: 40px;
   background-color: #525252;
+  padding-bottom: 10px;
 }
 footer p {
   padding-top: 8px;
@@ -217,6 +237,9 @@ footer p {
   font-size: 25px;
   font-style: lighter;
   margin-left: 25px;
+}
+footer .contact {
+  color: white;
 }
 
 li {
@@ -227,6 +250,93 @@ li {
   margin-left: -15px;
   list-style: none;
   margin-top: 8px;
+}
+
+.arrow {
+  position: absolute;
+  color: black;
+  left: 10px;
+  top: 23px;
+  font-weight: bold;
+}
+
+.backGround img {
+  width: 375px;
+  height: 200px;
+  position: relative;
+  z-index: 5;
+}
+
+.menu {
+  background-color: #f7f7f7;
+  z-index: 10;
+  padding-top: 25px;
+  position: relative;
+  top: -50px;
+  border-radius: 42px 41px 0px 0px;
+  max-width: 375px;
+}
+.menu .restauName {
+  margin-left: 15px;
+  font-family: Shrikhand;
+  font-size: 28px;
+  display: flex;
+}
+.menu .restauName .heart {
+  margin-left: 70px;
+  margin-top: 25px;
+}
+
+.course {
+  margin-left: 15px;
+}
+.course .course__type {
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+}
+.course .course__type::after {
+  content: "";
+  height: 3px;
+  width: 60%;
+  background: #99E2D0;
+  position: absolute;
+  left: calc(10% - 10%);
+  bottom: -5px;
+}
+.course .course__type--plate {
+  background-color: red;
+  border-radius: 15px;
+  width: 340px;
+  height: 65px;
+}
+.course .course__type--plate .course__1 {
+  justify-content: flex-start;
+  font-size: 15px;
+  font-weight: bold;
+}
+.course .course__type--plate .course__2 {
+  line-height: -50px;
+  padding-bottom: 20px;
+}
+.course h1 {
+  font-size: 15px;
+  margin-left: 10px;
+  padding-top: 10px;
+}
+.course h6 {
+  margin-left: 10px;
+  padding-top: -100px;
+  line-height: -30px;
+}
+
+.order button {
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+}
+.order .order__btn {
+  margin-top: 3.5em;
 }
 
 /*# sourceMappingURL=style.css.map */
