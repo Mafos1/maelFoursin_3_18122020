@@ -55,7 +55,7 @@
   color: grey;
 }
 
-#restau .restau__card--new, #restau h5, #restau .heart, #restau h6 {
+#restau .restau__card--new__none, #restau .restau__card--new, #restau h5, #restau .heart, #restau h6 {
   z-index: 1;
   position: absolute;
   font-size: 16px;
@@ -145,6 +145,21 @@
   font-size: 0.5em;
 }
 
+#restau .restau__card--new__none, #restau .restau__card--new {
+  color: #049b3e;
+  font-weight: bold;
+  left: 230px;
+  top: 20px;
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  border: none;
+  text-align: center;
+  background-color: #99E2D0;
+  border-radius: 10%;
+  line-height: 30px;
+}
+
 @keyframes fade {
   0% {
     transform: translateY(15px);
@@ -165,7 +180,6 @@ html a:link {
 html a:active {
   color: inherit;
 }
-
 body {
   margin: 0;
   padding: 0;
@@ -220,10 +234,23 @@ header .logo {
   display: block;
   margin: 0 auto;
 }
+@media only screen and (min-width: 1600px) {
+  #how {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 100px;
+  }
+}
 #how h2 {
   display: flex;
   justify-content: center;
   margin-left: -6.1em;
+  opacity: 1;
+}
+@media only screen and (min-width: 1600px) {
+  #how h2 {
+    opacity: 0;
+  }
 }
 #how .how__box .how__btn--num {
   left: -30px;
@@ -285,8 +312,21 @@ header .logo {
   align-items: center;
   flex-direction: column;
 }
+@media only screen and (min-width: 1600px) {
+  #restau {
+    display: flex;
+    flex-direction: inherit;
+    justify-content: space-around;
+  }
+}
 #restau h2 {
   margin-left: -7.6em;
+  opacity: 1;
+}
+@media only screen and (min-width: 1600px) {
+  #restau h2 {
+    opacity: 0;
+  }
 }
 #restau .restau__card {
   position: relative;
@@ -332,25 +372,20 @@ header .logo {
   left: 10px;
   top: 200px;
 }
-#restau .restau__card--new {
-  color: #049b3e;
-  font-weight: bold;
-  left: 230px;
-  top: 20px;
-  display: inline-block;
-  width: 80px;
-  height: 30px;
-  border: none;
-  text-align: center;
-  background-color: #99E2D0;
-  border-radius: 10%;
-  line-height: 30px;
+#restau .restau__card--new__none {
+  opacity: 0;
 }
 
 footer {
   margin-top: 40px;
   background-color: #525252;
   padding-bottom: 10px;
+}
+@media only screen and (min-width: 1600px) {
+  footer {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 footer p {
   padding-top: 8px;
@@ -372,6 +407,14 @@ li {
   margin-left: -15px;
   list-style: none;
   margin-top: 8px;
+}
+@media only screen and (min-width: 1600px) {
+  li {
+    display: inline;
+    justify-content: space-between;
+    margin-right: 100px;
+    line-height: 65px;
+  }
 }
 
 .arrow {

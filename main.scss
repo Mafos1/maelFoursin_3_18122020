@@ -162,9 +162,22 @@ $footer : rgb(82, 82, 82);
          }
       }
    }   
+
+   %new {
+      color: rgb(4, 155, 62);
+         font-weight: bold;
+         left: 230px;
+         top: 20px;
+         display: inline-block;
+         width: 80px;
+         height: 30px;
+         border: none;
+         text-align: center;
+         background-color: $third;
+         border-radius: 10%;
+         line-height: 30px;
+   }
    
-
-
 
 @keyframes fade {
    0% {
@@ -177,6 +190,21 @@ $footer : rgb(82, 82, 82);
    }
  }
   
+
+
+ @mixin responsive($breakpoint) {
+
+   @if $breakpoint == desk {
+       @media only screen and (min-width: 1600px) { @content };
+   } 
+   @if $breakpoint == tab {
+       @media only screen and (min-width: 1100px) { @content };
+   } 
+   @if $breakpoint == phone {
+       @media only screen and (min-width: 600px) { @content };
+   }
+}
+
 //-----//
 
 html {
@@ -189,8 +217,10 @@ html {
       color: inherit;
    }
    font-family: 'Roboto', sans-serif;
-}
 
+   @include responsive(desk);
+   @include responsive(tab);
+}
 body {
    margin: 0;
    padding: 0;
@@ -260,11 +290,20 @@ header {
 // MAIN //
 
 #how {
+   @include responsive(desk) {
+      display: flex;
+      justify-content: space-around;
+      margin-right: 100px;
+   }
 
    h2 {
       display: flex;
       justify-content: center;
       margin-left: -6.1em;
+      opacity: 1;
+         @include responsive(desk) {
+         opacity: 0;
+      }
    }
 
    .how__box {
@@ -338,6 +377,12 @@ header {
 }
 
 #restau {
+   @include responsive(desk) {
+      display: flex;
+      flex-direction: inherit;
+      justify-content: space-around;
+   }
+   
    background-color: $greyBG;
    margin-top: 70px;
    padding-top: 30px;
@@ -348,6 +393,10 @@ header {
 
    h2 {
       margin-left: -7.6em;
+      opacity: 1;
+      @include responsive(desk) {
+      opacity: 0;
+      }
    }
    
    .restau__card {
@@ -355,6 +404,7 @@ header {
       margin-top: 25px;
      }
    .restau__card img{
+      
       width : 320px;
       height: 206px;
       object-fit: fill;
@@ -402,22 +452,25 @@ header {
     }
     .restau__card--new {
       @extend %cardTxt;
-      color: rgb(4, 155, 62);
-      font-weight: bold;
-      left: 230px;
-      top: 20px;
-      display: inline-block;
-      width: 80px;
-      height: 30px;
-      border: none;
-      text-align: center;
-      background-color: $third;
-      border-radius: 10%;
-      line-height: 30px;
+      @extend %new;
+    }
+    .restau__card--new__none {
+      @extend %cardTxt;
+      @extend %new;
+      opacity: 0;
+      
     }
 }
 
+
+
 footer {
+
+   @include responsive(desk) {
+      display: flex;
+      justify-content: space-around;
+   }
+   
    margin-top: 40px;
    background-color: $footer;
    padding-bottom: 10px;
@@ -436,6 +489,12 @@ footer {
 }
 
    li {
+      @include responsive(desk) {
+         display: inline;
+         justify-content: space-between;
+         margin-right: 100px;
+         line-height: 65px;
+      }
    color: white;
    font-family: 'Roboto', sans-serif;
    font-size: 15px;
@@ -490,3 +549,9 @@ footer {
    animation: fade ease-in-out 700ms both;
 }
 
+// @media screen and (max-width: 600px) {
+
+//    #how [
+//       flex-wrap: wrap;;
+//    ]
+// }
