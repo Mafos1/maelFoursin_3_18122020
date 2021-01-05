@@ -90,6 +90,10 @@
   cursor: pointer;
   animation: fade ease-in-out 700ms both;
 }
+.course .dish:hover .dish__desc {
+  width: 190px;
+  min-width: 190px;
+}
 .course .dish:hover .check__icon {
   transform: rotate(360deg);
   transition: 1s;
@@ -102,11 +106,7 @@
   background: white;
   transition: 0.6s;
 }
-.course .dish__desc:hover {
-  width: 190px;
-  min-width: 190px;
-}
-.course .dish__desc .dish__dish__desc--text1 {
+.course .dish__desc .dish__desc--text1 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -115,7 +115,7 @@
   font-weight: bold;
   font-size: 17px;
 }
-.course .dish__desc .dish__dish__desc--text2 {
+.course .dish__desc .dish__desc--text2 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

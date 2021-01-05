@@ -91,7 +91,7 @@ $footer : rgb(82, 82, 82);
       } 
 }
 
-%lapin {
+%dishCards {
    .dish {
          display: flex;
          height: 50px;
@@ -105,6 +105,11 @@ $footer : rgb(82, 82, 82);
          cursor: pointer;
          animation: fade ease-in-out 700ms both; 
       }
+      .dish:hover .dish__desc {
+         width: 190px;
+         min-width: 190px;
+         }
+         
       .dish:hover .check__icon {
       transform: rotate(360deg);
       transition: 1s;
@@ -116,11 +121,8 @@ $footer : rgb(82, 82, 82);
       min-width: 270px;
       background: white;
       transition: 0.6s;
-      &:hover {
-         width: 190px;
-         min-width: 190px;
-      }
-         .dish__dish__desc--text1 {
+      
+         .dish__desc--text1 {
          overflow: hidden;
          text-overflow: ellipsis;
          white-space: nowrap;
@@ -129,7 +131,7 @@ $footer : rgb(82, 82, 82);
          font-weight: bold;
          font-size: 17px;
          }
-         .dish__dish__desc--text2 {
+         .dish__desc--text2 {
          overflow: hidden;
          text-overflow: ellipsis;
          white-space: nowrap;
@@ -483,7 +485,7 @@ footer {
 
 .course {
    @extend %menu_Course;
-   @extend %lapin;
+   @extend %dishCards;
    margin-left: 15px;
    animation: fade ease-in-out 700ms both;
 }
