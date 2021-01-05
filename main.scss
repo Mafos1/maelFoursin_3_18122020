@@ -25,7 +25,6 @@ $footer : rgb(82, 82, 82);
 	color:#ffffff;
 	border-color: $greyText;
    border-width:0px;
-
       &:hover {
          background:#c9bdbd;
          background:linear-gradient(#fc69d2, #e93fb9);
@@ -47,10 +46,9 @@ $footer : rgb(82, 82, 82);
 	font-size:16px;
    border-style: none;
    left: 50px;
-
-   &:hover {
-      background:linear-gradient(#fff6fc, #fddaf3);
-      box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(192, 18, 192) 0px 0px 35px;
+      &:hover {
+         background:linear-gradient(#fff6fc, #fddaf3);
+         box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(161, 161, 161) 0px 0px 18px;
    }
 }
 
@@ -76,32 +74,6 @@ $footer : rgb(82, 82, 82);
    color:black;
 }
 
-%menu_Cards {
-   .form {
-      display: flex;
-      .form__line {
-         width: 70%;
-         .line1 {
-         padding-left: 11px;
-         padding-top: 11px;
-         font-weight: bold;
-         font-size: 17px;
-         }
-         .line2 {
-            padding-left: 11px;
-            padding-top: 5px;
-            font-size: 12px;
-         }
-      }
-      .price {
-         width: 0%;
-         padding-left: 55px;
-         padding-top: 30px;
-         font-weight: bold;
-      }
-   }
-}
-
 %menu_Course {
    .course__type {
       text-transform: uppercase;
@@ -109,7 +81,7 @@ $footer : rgb(82, 82, 82);
       position:relative;
       }
       .course__type::after {
-         content:'';
+         content:''; 
          height:3px;
          width:60%;
          background: $third;
@@ -119,6 +91,90 @@ $footer : rgb(82, 82, 82);
       } 
 }
 
+%lapin {
+   .dish {
+         display: flex;
+         height: 50px;
+         background-color: white;
+         box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(202, 202, 202) 0px 0px 18px;
+         border-radius: 15px;
+         width: 340px;
+         height: 65px;
+         margin-top: 1em;
+         overflow: hidden;
+         cursor: pointer;
+         animation: fade ease-in-out 700ms both; 
+      }
+      .dish:hover .check__icon {
+      transform: rotate(360deg);
+      transition: 1s;
+      }
+      .dish__desc {
+      display: flex;
+      flex-direction: column;
+      width: 270px;
+      min-width: 270px;
+      background: white;
+      transition: 0.6s;
+      &:hover {
+         width: 190px;
+         min-width: 190px;
+      }
+         .dish__dish__desc--text1 {
+         overflow: hidden;
+         text-overflow: ellipsis;
+         white-space: nowrap;
+         padding-left: 11px;
+         padding-top: 11px;
+         font-weight: bold;
+         font-size: 17px;
+         }
+         .dish__dish__desc--text2 {
+         overflow: hidden;
+         text-overflow: ellipsis;
+         white-space: nowrap;
+         padding-left: 11px;
+         padding-top: 5px;
+         font-size: 12px;
+      }
+   }
+      .price {
+      min-width: 60px;
+      width: 60px;
+      background: white;
+      display: flex;
+      width: 0%;
+      padding-left: 15px;
+      padding-top: 30px;
+      font-weight: bold;
+      }
+      .check {
+      min-width: 80px;
+      width: 80px;
+      background: $third;
+      color: white;
+      font-size: 50px;
+         .check__icon {
+         color: white;
+         font-size: 0.5em;
+         }
+      }
+   }   
+   
+
+
+
+@keyframes fade {
+   0% {
+     transform: translateY(15px);
+     opacity: 0;
+   }
+   100% {
+     transform: translateY(0);
+     opacity: 1;
+   }
+ }
+  
 //-----//
 
 html {
@@ -146,7 +202,7 @@ header {
    align-items: center;
    margin-top: 18px;
    margin-bottom: 18px;
-   
+
    .logo {
       align-items: center;
       margin-left: -0px ;
@@ -264,7 +320,7 @@ header {
 
       &:hover {
          background:linear-gradient(#fff6fc, #fddaf3);
-         box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(192, 18, 192) 0px 0px 35px;
+         box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(161, 161, 161) 0px 0px 18px;
       }
 
       .how__btn--icon {
@@ -279,13 +335,7 @@ header {
    }
 }
 
-
 #restau {
-   
-   h2 {
-      margin-left: -7.6em;
-   }
-
    background-color: $greyBG;
    margin-top: 70px;
    padding-top: 30px;
@@ -293,13 +343,14 @@ header {
    justify-content: center;
    align-items: center;  
    flex-direction: column;
-   
 
+   h2 {
+      margin-left: -7.6em;
+   }
+   
    .restau__card {
       position: relative;
       margin-top: 25px;
-
-      
      }
    .restau__card img{
       width : 320px;
@@ -312,10 +363,9 @@ header {
       overflow: hidden;
       border-radius: 11px 11px 11px 11px;
       box-shadow: 2px 8px 8px 0px rgba(202, 202, 202, 0.75);
-
-      &:hover {
-         background:linear-gradient(#fff6fc, #fddaf3);
-         box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(240, 104, 240) 0px 0px 18px;
+         &:hover {
+            background:linear-gradient(#fff6fc, #fddaf3);
+            box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(150, 150, 150) 0px 0px 18px;
       }
     }
     h6 {
@@ -324,6 +374,9 @@ header {
       left: 10px;
       top: 215px;
     }
+
+    //coeur //
+    
     .heart {
       @extend %cardTxt;
       font-weight: bold;
@@ -428,84 +481,10 @@ footer {
 }
 
 
-
-%menu_Cards {
-   .form {
-      display: flex;
-      .form__line {
-         width: 70%;
-         .line1 {
-         padding-left: 11px;
-         padding-top: 11px;
-         font-weight: bold;
-         }
-         .line2 {
-            padding-left: 11px;
-            padding-top: 5px;
-         }
-      }
-      .price {
-         width: 0%;
-         padding-left: 55px;
-         padding-top: 30px;
-         font-weight: bold;
-      }
-   }
-}
-
-%menu_Course {
-   .course__type {
-      text-transform: uppercase;
-      display:inline-block;
-      position:relative;
-      }
-      .course__type::after {
-         content:'';
-         height:3px;
-         width:60%;
-         background: $third;
-         position:absolute;
-         left:calc(10% - 10%);
-         bottom:-5px;
-      } 
-}
-
-
-.menu {
-   background-color: $greyBG;
-}
-
 .course {
-   @extend %menu_Cards; 
    @extend %menu_Course;
+   @extend %lapin;
    margin-left: 15px;
-
-   
-   .course__type--plate {
-      background-color: white;
-      box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(202, 202, 202) 0px 0px 18px;
-      border-radius: 15px;
-      width: 340px;
-      height: 65px;
-      margin-top: 1em;
-   }
-}
-
-
-
-//////////////////////////////////////////
-
-.order {
-
-    button {
-       
-      text-decoration: none;
-      display: block;
-      margin: 0 auto;
-   }
-   .order__btn {
-      margin-top: 3.5em;
-      @extend %btnPink;
-   }  
+   animation: fade ease-in-out 700ms both;
 }
 

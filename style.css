@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
-.order .order__btn, .book .btnPink {
+.book .btnPink {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   width: 230px;
@@ -14,7 +14,7 @@
   border-color: #3a3a3a;
   border-width: 0px;
 }
-.order .order__btn:hover, .book .btnPink:hover {
+.book .btnPink:hover {
   background: #c9bdbd;
   background: linear-gradient(#fc69d2, #e93fb9);
   box-shadow: inset #ffffff 0px 0px 0px 0px, #c012c0 0px 0px 35px;
@@ -37,7 +37,7 @@
 }
 #how .how__btn--3:hover, #how .how__btn:hover {
   background: linear-gradient(#fff6fc, #fddaf3);
-  box-shadow: inset #ffffff 0px 0px 0px 0px, #c012c0 0px 0px 35px;
+  box-shadow: inset #ffffff 0px 0px 0px 0px, #a1a1a1 0px 0px 18px;
 }
 
 #how .how__btn--3, #how .how__btn, #how .how__box .how__btn--3 {
@@ -62,30 +62,6 @@
   color: black;
 }
 
-.course .form {
-  display: flex;
-}
-.course .form .form__line {
-  width: 70%;
-}
-.course .form .form__line .line1 {
-  padding-left: 11px;
-  padding-top: 11px;
-  font-weight: bold;
-  font-size: 17px;
-}
-.course .form .form__line .line2 {
-  padding-left: 11px;
-  padding-top: 5px;
-  font-size: 12px;
-}
-.course .form .price {
-  width: 0%;
-  padding-left: 55px;
-  padding-top: 30px;
-  font-weight: bold;
-}
-
 .course .course__type {
   text-transform: uppercase;
   display: inline-block;
@@ -101,6 +77,84 @@
   bottom: -5px;
 }
 
+.course .dish {
+  display: flex;
+  height: 50px;
+  background-color: white;
+  box-shadow: inset #ffffff 0px 0px 0px 0px, #cacaca 0px 0px 18px;
+  border-radius: 15px;
+  width: 340px;
+  height: 65px;
+  margin-top: 1em;
+  overflow: hidden;
+  cursor: pointer;
+  animation: fade ease-in-out 700ms both;
+}
+.course .dish:hover .check__icon {
+  transform: rotate(360deg);
+  transition: 1s;
+}
+.course .dish__desc {
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  min-width: 270px;
+  background: white;
+  transition: 0.6s;
+}
+.course .dish__desc:hover {
+  width: 190px;
+  min-width: 190px;
+}
+.course .dish__desc .dish__dish__desc--text1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 11px;
+  padding-top: 11px;
+  font-weight: bold;
+  font-size: 17px;
+}
+.course .dish__desc .dish__dish__desc--text2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 11px;
+  padding-top: 5px;
+  font-size: 12px;
+}
+.course .price {
+  min-width: 60px;
+  width: 60px;
+  background: white;
+  display: flex;
+  width: 0%;
+  padding-left: 15px;
+  padding-top: 30px;
+  font-weight: bold;
+}
+.course .check {
+  min-width: 80px;
+  width: 80px;
+  background: #99E2D0;
+  color: white;
+  font-size: 50px;
+}
+.course .check .check__icon {
+  color: white;
+  font-size: 0.5em;
+}
+
+@keyframes fade {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 html {
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
@@ -211,7 +265,7 @@ header .logo {
 }
 #how .how__btn--3:hover {
   background: linear-gradient(#fff6fc, #fddaf3);
-  box-shadow: inset #ffffff 0px 0px 0px 0px, #c012c0 0px 0px 35px;
+  box-shadow: inset #ffffff 0px 0px 0px 0px, #a1a1a1 0px 0px 18px;
 }
 #how .how__btn--3 .how__btn--icon {
   color: #9356DC;
@@ -252,7 +306,7 @@ header .logo {
 }
 #restau .restau__card img:hover {
   background: linear-gradient(#fff6fc, #fddaf3);
-  box-shadow: inset #ffffff 0px 0px 0px 0px, #f068f0 0px 0px 18px;
+  box-shadow: inset #ffffff 0px 0px 0px 0px, #969696 0px 0px 18px;
 }
 #restau h6 {
   font-weight: lighter;
@@ -355,66 +409,9 @@ li {
   margin-top: 25px;
 }
 
-.course .form {
-  display: flex;
-}
-.course .form .form__line {
-  width: 70%;
-}
-.course .form .form__line .line1 {
-  padding-left: 11px;
-  padding-top: 11px;
-  font-weight: bold;
-}
-.course .form .form__line .line2 {
-  padding-left: 11px;
-  padding-top: 5px;
-}
-.course .form .price {
-  width: 0%;
-  padding-left: 55px;
-  padding-top: 30px;
-  font-weight: bold;
-}
-
-.course .course__type {
-  text-transform: uppercase;
-  display: inline-block;
-  position: relative;
-}
-.course .course__type::after {
-  content: "";
-  height: 3px;
-  width: 60%;
-  background: #99E2D0;
-  position: absolute;
-  left: calc(10% - 10%);
-  bottom: -5px;
-}
-
-.menu {
-  background-color: #f7f7f7;
-}
-
 .course {
   margin-left: 15px;
-}
-.course .course__type--plate {
-  background-color: white;
-  box-shadow: inset #ffffff 0px 0px 0px 0px, #cacaca 0px 0px 18px;
-  border-radius: 15px;
-  width: 340px;
-  height: 65px;
-  margin-top: 1em;
-}
-
-.order button {
-  text-decoration: none;
-  display: block;
-  margin: 0 auto;
-}
-.order .order__btn {
-  margin-top: 3.5em;
+  animation: fade ease-in-out 700ms both;
 }
 
 /*# sourceMappingURL=style.css.map */
