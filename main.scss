@@ -88,6 +88,7 @@ $footer : rgb(82, 82, 82);
          position:absolute;
          left:calc(10% - 10%);
          bottom:-5px;
+         
       } 
 }
 
@@ -111,7 +112,7 @@ $footer : rgb(82, 82, 82);
          }
          
       .dish:hover .check__icon {
-      transform: rotate(360deg);
+      transform: rotate(3turn);
       transition: 1s;
       }
       .dish__desc {
@@ -159,9 +160,12 @@ $footer : rgb(82, 82, 82);
          .check__icon {
          color: white;
          font-size: 0.5em;
+         margin: 17px;
          }
       }
    }   
+
+
 
    %new {
       color: rgb(4, 155, 62);
@@ -195,13 +199,16 @@ $footer : rgb(82, 82, 82);
  @mixin responsive($breakpoint) {
 
    @if $breakpoint == desk {
-       @media only screen and (min-width: 1600px) { @content };
+       @media only screen and (min-width: 1159px) { @content };
    } 
    @if $breakpoint == tab {
-       @media only screen and (min-width: 1100px) { @content };
+       @media only screen and (min-width: 1160px) { @content };
    } 
-   @if $breakpoint == phone {
-       @media only screen and (min-width: 600px) { @content };
+   @if $breakpoint == tab2 {
+      @media only screen and (min-width: 1260px) { @content };
+  } 
+   @if $breakpoint == tabMenu {
+       @media only screen and (min-width: 376px) { @content };
    }
 }
 
@@ -254,6 +261,7 @@ header {
    font-weight: bold;
    border-top: 10em;
    color: $greyText;
+   
 
    .gps__City {
       margin-left: 15px;
@@ -295,6 +303,11 @@ header {
       justify-content: space-around;
       margin-right: 100px;
    }
+   @include responsive(tab) {
+   display: flex;
+   justify-content: space-around;
+   margin-right: 100px;
+   }
 
    h2 {
       display: flex;
@@ -304,6 +317,9 @@ header {
          @include responsive(desk) {
          opacity: 0;
       }
+      @include responsive(tab) {
+         opacity: 0;
+         }
    }
 
    .how__box {
@@ -382,6 +398,11 @@ header {
       flex-direction: inherit;
       justify-content: space-around;
    }
+   @include responsive(tab2) {
+      display: flex;
+      flex-direction: inherit;
+      justify-content: space-around;
+   }
    
    background-color: $greyBG;
    margin-top: 70px;
@@ -397,6 +418,10 @@ header {
       @include responsive(desk) {
       opacity: 0;
       }
+      @include responsive(tab) {
+         opacity: 0;
+         }
+      
    }
    
    .restau__card {
@@ -444,6 +469,9 @@ header {
          transition: 0.3s ease-in-out;
       }
     }
+
+
+
     h5 {
       @extend %cardTxt;
       font-weight: bold;
@@ -467,8 +495,7 @@ header {
 footer {
 
    @include responsive(desk) {
-      display: flex;
-      justify-content: space-around;
+   
    }
    
    margin-top: 40px;
@@ -513,26 +540,51 @@ footer {
    top: 23px;
    font-weight: bold;
 }
+
 .backGround img {
    width: 375px;
    height: 200px;
    position: relative;
    z-index: 5;
+   @include responsive(desk) {
+      width: 750px;
+      height: 440px;
+      margin-left: 28%;
+   }
+   @include responsive(tabMenu) {
+
+      }
 }
+
+// .desk {
+//    opacity: 0;
+//    @include responsive(desk) {
+//       opacity: 1;
+//    }
+// }
 .menu {
+   @include responsive(desk) {
+      max-width: inherit;
+      height: 30em;
+      justify-content: space-around;
+   }
+   
    background-color: $greyBG;
    z-index: 10;
    padding-top: 25px;
    position: relative;
    top: -50px;
    border-radius: 42px 41px 0px 0px;
-   max-width: 375px;
+   // max-width: 375px;
    
       .restauName {
          margin-left: 15px;
          font-family: Shrikhand;
          font-size: 25px;
          display: flex;
+         @include responsive(desk) {
+            margin-left: 44%;
+               }
 
          .heart {
             margin-left: 70px;
@@ -540,13 +592,42 @@ footer {
       }
    }
 }
+.heart_M {
+   @include responsive(desk) {
+      margin-left: 44%;
+   }
+   @extend %cardTxt;
+   font-weight: bold;
+   left: 310px;
+   top: 20px;
+   font-size: 28px;
+ }
+ .full_M{
+    opacity: 0;
+    color: $first;
+   &:active {
+      opacity: 1;
+      transition: 0.3s ease-in-out;
+   }
 
+ }
 
 .course {
+   @include responsive(tab) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      max-width: inherit; 
+   }
    @extend %menu_Course;
    @extend %dishCards;
-   margin-left: 15px;
+   margin-left: 4%;
    animation: fade ease-in-out 700ms both;
+}
+.course__type {
+   @include responsive(desk) {
+      margin-left: 80px; 
+      }
 }
 
 // @media screen and (max-width: 600px) {
@@ -555,3 +636,4 @@ footer {
 //       flex-wrap: wrap;;
 //    ]
 // }
+
