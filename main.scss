@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
 
+
+// ----- Helper ----- //
+
 // div {
 //    border: 1px solid green;
 // }
+
+
+
+// --------------------- COLORS ----------------------------------------------------------------------------------------------- //
+// ---------------------________------------------------------------------------------------------------------------------------ //  
 
 $first: #9356DC;
 $second: #FF79DA;
@@ -10,6 +18,10 @@ $third: #99E2D0;
 $greyText: #3a3a3a;
 $greyBG: rgb(247, 247, 247);
 $footer : rgb(82, 82, 82);
+
+
+// --------------------- CALLOUTS -------------------------------------------------------------------------------------------- // 
+// ---------------______________________-------------------------------------------------------------------------------------- //  
 
 %btnPink {
    text-decoration: none;
@@ -31,7 +43,7 @@ $footer : rgb(82, 82, 82);
          box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(192, 18, 192) 0px 0px 35px;
       }
 }
-   
+
 %how__btn {
    text-decoration: none;
    font-family: 'Roboto', sans-serif;
@@ -88,7 +100,6 @@ $footer : rgb(82, 82, 82);
          position:absolute;
          left:calc(10% - 10%);
          bottom:-5px;
-         
       } 
 }
 
@@ -104,14 +115,12 @@ $footer : rgb(82, 82, 82);
          margin-top: 1em;
          overflow: hidden;
          cursor: pointer;
-         animation: fade ease-in-out 700ms both; 
-         
+         animation: fade ease-in-out 700ms both;        
       }
       .dish:hover .dish__desc {
          width: 190px;
          min-width: 190px;
          }
-         
       .dish:hover .check__icon {
       animation: animationFrames ease 1s;
       transition: 1s;
@@ -123,7 +132,6 @@ $footer : rgb(82, 82, 82);
       min-width: 270px;
       background: white;
       transition: 0.6s;
-      
          .dish__desc--text1 {
          overflow: hidden;
          text-overflow: ellipsis;
@@ -169,21 +177,50 @@ $footer : rgb(82, 82, 82);
       }
    }   
 
-   %new {
-      color: rgb(4, 155, 62);
-         font-weight: bold;
-         left: 230px;
-         top: 20px;
-         display: inline-block;
-         width: 80px;
-         height: 30px;
-         border: none;
-         text-align: center;
-         background-color: $third;
-         border-radius: 10%;
-         line-height: 30px;
-   }
-   
+%new {
+   color: rgb(4, 155, 62);
+      font-weight: bold;
+      left: 230px;
+      top: 20px;
+      display: inline-block;
+      width: 80px;
+      height: 30px;
+      border: none;
+      text-align: center;
+      background-color: $third;
+      border-radius: 10%;
+      line-height: 30px;
+}
+
+%spin {
+   display: inline-block;
+   width: 80px;
+   height: 80px;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 250px;
+   left: 0;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   .spinner:after {
+      content: " ";
+      display: block;
+      width: 200px;
+      height: 200px;
+      margin: 8px;
+      border-radius: 50%;
+      border: 6px solid #fed;
+      border-color: $first transparent $second transparent;
+      animation: spinner 1.5s linear ;
+      opacity: 0;
+    }
+}
+
+
+// -------------------------- KEYFRAMES ------------------------------------------------------------------------------------- //
+// --------------------------___________------------------------------------------------------------------------------------- //  
 
 @keyframes fade {
    0% {
@@ -210,8 +247,28 @@ $footer : rgb(82, 82, 82);
      opacity: 1;
    }
  }
-  
 
+ @keyframes spinner {
+   0% {
+     transform: rotate(0deg);
+     opacity: 0;
+   }
+   10% {
+      transform: rotate(36deg);
+      opacity: 1;
+    }
+    90% {
+      transform: rotate(324deg);
+      opacity: 1;
+    }
+   100% {
+     transform: rotate(360deg);
+     opacity:0;
+   }
+ }
+  
+// -------------------------- MIXINS ------------------------------------------------------------------------------------------- //
+// -------------------------_________------------------------------------------------------------------------------------------- //  
 
  @mixin responsive($breakpoint) {
 
@@ -229,7 +286,18 @@ $footer : rgb(82, 82, 82);
    }
 }
 
-//-----//
+
+
+
+
+
+
+// ------------------------------ CODE ------------------------------------------------------------------------------------------- //
+// ------------------------------______------------------------------------------------------------------------------------------- //  
+
+
+
+
 
 html {
    scroll-behavior: smooth;
@@ -255,7 +323,8 @@ main{
    animation: fadeIndex ease-in-out 3000ms both;
 }
 
-// Header //
+
+// ----------- ! ! HEADER ! ! ----------- //
 
 header {
    display: flex;
@@ -263,16 +332,57 @@ header {
    align-items: center;
    margin-top: 18px;
    margin-bottom: 18px;
-
    .logo {
       align-items: center;
       margin-left: -0px ;
       max-width: 150px;
       max-height: 100px;
    }
+   .arrow {
+      position: absolute;
+      color: black;
+      left: 10px;
+      top: 23px;
+      font-weight: bold;
+   }
 }
 
-// GPS //
+
+// ----------- ! ! SPINNER ! ! ----------- //
+
+.spinner {
+   display: inline-block;
+   width: 80px;
+   height: 80px;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 250px;
+   left: 0;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   
+ }
+ .spinner:after {
+   content: " ";
+   display: block;
+   width: 200px;
+   height: 200px;
+   margin: 8px;
+   border-radius: 50%;
+   border: 6px solid #fed;
+   border-color: $first transparent $second transparent;
+   animation: spinner 1.5s linear ;
+   opacity: 0;
+ }
+
+
+// ______________ INDEX ______________ //
+
+// ----------- ! ! GPS ! ! ----------- //
+// ------------- index/gps ----------- //
+
 
 .gps {
    display: flex;
@@ -283,14 +393,14 @@ header {
    font-weight: bold;
    border-top: 10em;
    color: $greyText;
-   
-
    .gps__City {
       margin-left: 15px;
    }
 }
 
-// WELCOME //
+
+// ----------- ! ! WELCOME ! ! ----------- //
+// -- index/ReservationAndButtons -- //
 
 .book {
    background-color: $greyBG;
@@ -317,21 +427,23 @@ header {
    }  
 }
 
-// MAIN //
+
+// ----------- ! ! MAIN ! ! ----------- //
+
+//----------------------------//
+// -- Index/fonctionnement -- //
 
 #how {
    @include responsive(desk) {
       display: flex;
       justify-content: space-around;
       margin-right: 100px;
-      
    }
    @include responsive(tab) {
    display: flex;
    justify-content: space-around;
    margin-right: 100px;
    }
-
    h2 {
       display: flex;
       justify-content: center;
@@ -342,11 +454,9 @@ header {
       }
       @include responsive(tab) {
          opacity: 0;
-         }
+      }
    }
-
    .how__box {
-
       .how__btn--num {
          left: -30px;
          position:relative;
@@ -364,14 +474,12 @@ header {
       @extend %how__btn;
       @extend %how__btn--spec;
       background:linear-gradient(rgb(245, 236, 255), #f9f5ff);
-
          .how__btn--icon {
          @extend %icon;
          color: $first;
          }    
       }      
    }
-   
    button {
    display: block;
    margin: 0 auto;
@@ -397,12 +505,10 @@ header {
       @extend %how__btn;
       @extend %how__btn--spec;
       background:linear-gradient(rgb(245, 236, 255), #f9f5ff);
-
       &:hover {
          background:linear-gradient(#fff6fc, #fddaf3);
          box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(161, 161, 161) 0px 0px 18px;
       }
-
       .how__btn--icon {
          @extend %icon;
          color: $first;
@@ -415,6 +521,9 @@ header {
    }
 }
 
+//-----------------------------//
+// -- Index/RestaurantCards -- //
+
 #restau {
    @include responsive(desk) {
       display: flex;
@@ -426,7 +535,6 @@ header {
       flex-direction: inherit;
       justify-content: space-around;
    }
-   
    background-color: $greyBG;
    margin-top: 70px;
    padding-top: 30px;
@@ -434,7 +542,6 @@ header {
    justify-content: center;
    align-items: center;  
    flex-direction: column;
-
    h2 {
       margin-left: -7.6em;
       opacity: 1;
@@ -444,15 +551,12 @@ header {
       @include responsive(tab) {
          opacity: 0;
          }
-      
    }
-   
    .restau__card {
       position: relative;
       margin-top: 25px;
      }
    .restau__card img{
-      
       width : 320px;
       height: 206px;
       object-fit: fill;
@@ -466,7 +570,7 @@ header {
          &:hover {
             background:linear-gradient(#fff6fc, #fddaf3);
             box-shadow:inset #ffffff 0px 0px 0px 0px,rgb(150, 150, 150) 0px 0px 18px;
-      }
+         }
     }
     h6 {
       @extend %cardTxt;
@@ -474,8 +578,25 @@ header {
       left: 10px;
       top: 215px;
     }
+    h5 {
+      @extend %cardTxt;
+      font-weight: bold;
+      left: 10px;
+      top: 200px;
+    }
+    .restau__card--new {
+      @extend %cardTxt;
+      @extend %new;
+    }
+    .restau__card--new__none {
+      @extend %cardTxt;
+      @extend %new;
+      opacity: 0;
+    }
 
-    //coeur //
+
+//----------------------------//
+// ------ Index/heart ------- //
     
     .heart {
       @extend %cardTxt;
@@ -492,133 +613,14 @@ header {
          transition: 0.3s ease-in-out;
       }
     }
-
-
-
-    h5 {
-      @extend %cardTxt;
-      font-weight: bold;
-      left: 10px;
-      top: 200px;
-    }
-    .restau__card--new {
-      @extend %cardTxt;
-      @extend %new;
-    }
-    .restau__card--new__none {
-      @extend %cardTxt;
-      @extend %new;
-      opacity: 0;
-      
-    }
 }
 
 
+// ______________ MENU ______________ //
 
-footer {
+//------------------------------------//
+// ------- Menu/heartAndImage ------- //
 
-   @include responsive(desk) {
-   
-   }
-   
-   margin-top: 40px;
-   background-color: $footer;
-   padding-bottom: 10px;
-
-   p {
-   padding-top: 8px;
-   color: white;
-   font-family: Shrikhand;
-   font-size: 25px;
-   font-style: lighter;
-   margin-left: 25px;
-   }
-   .contact {
-      color: white;
-   }
-}
-
-   li {
-      @include responsive(desk) {
-         display: inline;
-         justify-content: space-between;
-         margin-right: 100px;
-         line-height: 65px;
-      }
-   color: white;
-   font-family: 'Roboto', sans-serif;
-   font-size: 15px;
-   font-weight: normal;
-   margin-left: -15px;
-   list-style: none;
-   margin-top: 8px;
-}
-
-// MENUS // 
-
-.arrow {
-   position: absolute;
-   color: black;
-   left: 10px;
-   top: 23px;
-   font-weight: bold;
-}
-
-.backGround img {
-   width: 375px;
-   height: 200px;
-   position: relative;
-   z-index: 5;
-   @include responsive(desk) {
-      width: 750px;
-      height: 440px;
-      margin-left: 28%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-
-   }
-   @include responsive(tabMenu) {
-
-      }
-}
-
-// .desk {
-//    opacity: 0;
-//    @include responsive(desk) {
-//       opacity: 1;
-//    }
-// }
-.menu {
-   @include responsive(desk) {
-      max-width: inherit;
-      height: 30em;
-      justify-content: space-around;
-   }
-   
-   background-color: $greyBG;
-   z-index: 10;
-   padding-top: 25px;
-   position: relative;
-   top: -50px;
-   border-radius: 42px 41px 0px 0px;
-   // max-width: 375px;
-   
-      .restauName {
-         margin-left: 15px;
-         font-family: Shrikhand;
-         font-size: 25px;
-         display: flex;
-         @include responsive(desk) {
-            margin-left: 44%;
-               }
-
-         .heart {
-            margin-left: 70px;
-            margin-top: 25px;
-      }
-   }
-}
 .heart_M {
    @include responsive(desk) {
       margin-left: 44%;
@@ -636,9 +638,54 @@ footer {
       opacity: 1;
       transition: 0.3s ease-in-out;
    }
-
  }
+.backGround img {
+   width: 375px;
+   height: 200px;
+   position: relative;
+   z-index: 5;
+   @include responsive(desk) {
+      width: 750px;
+      height: 440px;
+      margin-left: 28%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+   }
+   @include responsive(tabMenu) {
+      }
+}
 
+
+//---------------------------//
+// ------- Menu/menu ------- //
+
+.menu {
+   @include responsive(desk) {
+      max-width: inherit;
+      height: 30em;
+      justify-content: space-around;
+   }
+   background-color: $greyBG;
+   z-index: 10;
+   padding-top: 25px;
+   position: relative;
+   top: -50px;
+   border-radius: 42px 41px 0px 0px;
+      .restauName {
+         margin-left: 15px;
+         font-family: Shrikhand;
+         font-size: 25px;
+         display: flex;
+         @include responsive(desk) {
+            margin-left: 44%;
+         }
+         // .heart {
+         //    margin-left: 70px;
+         //    margin-top: 25px;
+         // }
+      }
+}
 .course {
    @include responsive(tab) {
       display: flex;
@@ -657,50 +704,45 @@ footer {
       }
 }
 
+ // ----------- ! ! FOOTER ! ! ----------- //
 
- .spinner {
-   display: inline-block;
-   width: 80px;
-   height: 80px;
-   width: 100%;
-   height: 100%;
-   position: absolute;
-   top: 250px;
-   left: 0;
-   display:flex;
-   justify-content: center;
-   align-items: center;
-   
- }
- .spinner:after {
-   content: " ";
-   display: block;
-   width: 200px;
-   height: 200px;
-   margin: 8px;
-   border-radius: 50%;
-   border: 6px solid #fed;
-   border-color: $first transparent $second transparent;
-   animation: spinner 1.5s linear ;
-   opacity: 0;
- }
- @keyframes spinner {
-   0% {
-     transform: rotate(0deg);
-     opacity: 0;
+footer {
+   @include responsive(desk) {
    }
-   10% {
-      transform: rotate(36deg);
-      opacity: 1;
-    }
-    90% {
-      transform: rotate(324deg);
-      opacity: 1;
-    }
-   100% {
-     transform: rotate(360deg);
-     opacity:0;
+   margin-top: 40px;
+   background-color: $footer;
+   padding-bottom: 10px;
+   p {
+   padding-top: 8px;
+   color: white;
+   font-family: Shrikhand;
+   font-size: 25px;
+   font-style: lighter;
+   margin-left: 25px;
    }
- }
+   .contact {
+      color: white;
+   }
+}
+
+li {
+   @include responsive(desk) {
+      display: inline;
+      justify-content: space-between;
+      margin-right: 100px;
+      line-height: 65px;
+      }
+   color: white;
+   font-family: 'Roboto', sans-serif;
+   font-size: 15px;
+   font-weight: normal;
+   margin-left: -15px;
+   list-style: none;
+   margin-top: 8px;
+}
+
+
+
+
  
  
