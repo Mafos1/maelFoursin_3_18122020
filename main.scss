@@ -286,6 +286,9 @@ $footer : rgb(82, 82, 82);
    @if $breakpoint == tab {
        @media only screen and (min-width: 1040px) { @content };
    } 
+   @if $breakpoint == smal {
+      @media only screen and (min-width: 400px) { @content };
+  } 
 }
 
 
@@ -627,6 +630,11 @@ header {
    }
 }
 
+.Box {
+   @include responsive(smal) {
+     flex-direction: row;
+   }
+}
 
 //---------------------------//
 // ------- Menu/menu ------- //
@@ -638,6 +646,7 @@ header {
       justify-content: space-around;
       margin-left: -50px;
    }
+   
    
    background-color: $greyBG;
    z-index: 10;
