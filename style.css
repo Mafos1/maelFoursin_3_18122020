@@ -25,7 +25,6 @@
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   width: 321px;
-  height: 75px;
   padding: 16px;
   box-shadow: #d8d8d8 1px 5px 5px;
   background: linear-gradient(white, #f0f0f0);
@@ -247,6 +246,14 @@
     transform: rotate(360deg);
   }
 }
+@keyframes yoo {
+  0% {
+    margin-left: 15px;
+  }
+  100% {
+    margin-left: 150px;
+  }
+}
 html {
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
@@ -330,6 +337,9 @@ header .arrow {
   display: block;
   margin: 0 auto;
 }
+#how {
+  display: block;
+}
 @media only screen and (min-width: 1260px) {
   #how {
     display: flex;
@@ -386,9 +396,12 @@ header .arrow {
 }
 #how .how__btn {
   align-items: flex-start;
+  margin: auto;
+  margin-top: 30px;
 }
 #how .how__btn--3 {
   align-items: flex-start;
+  margin: auto;
   background: linear-gradient(#f5ecff, #f9f5ff);
 }
 #how .how__btn--3:hover {
@@ -442,7 +455,7 @@ header .arrow {
   width: 320px;
   height: 206px;
   object-fit: fill;
-  border-radius: 10%, 10%, 0, 0;
+  border-radius: 10%;
   line-height: 800px;
   border-top: 10px none #f7f7f7;
   border-bottom: 80px solid #f1f1f1;
@@ -472,6 +485,9 @@ header .arrow {
   left: 280px;
   top: 235px;
   font-size: 22px;
+}
+#restau .far {
+  color: #9356DC;
 }
 #restau .full {
   opacity: 0;
@@ -522,7 +538,7 @@ header .arrow {
 
 @media only screen and (min-width: 400px) {
   .Box {
-    flex-direction: row;
+    margin-left: 3em;
   }
 }
 
@@ -583,7 +599,6 @@ footer p {
   color: white;
   font-family: Shrikhand;
   font-size: 25px;
-  font-style: lighter;
   margin-left: 25px;
 }
 footer .contact {
