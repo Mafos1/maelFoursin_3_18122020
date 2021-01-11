@@ -359,7 +359,7 @@ header .arrow {
 }
 #how .how__box strong {
   position: relative;
-  left: -30px;
+  left: -1px;
 }
 #how .how__box .how__btn--3 {
   background: linear-gradient(#f5ecff, #f9f5ff);
@@ -384,7 +384,11 @@ header .arrow {
   left: 30px;
   margin-top: 12px;
 }
+#how .how__btn {
+  align-items: flex-start;
+}
 #how .how__btn--3 {
+  align-items: flex-start;
   background: linear-gradient(#f5ecff, #f9f5ff);
 }
 #how .how__btn--3:hover {

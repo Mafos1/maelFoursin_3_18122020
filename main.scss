@@ -461,7 +461,7 @@ z-index: -2;
       }
       strong {
          position: relative;
-         left: -30px;
+         left: -1px;
       }
       .how__btn--3 {
       @extend %how__btn;
@@ -491,10 +491,12 @@ z-index: -2;
       margin-top: 12px;
    }
    .how__btn {
+      align-items: flex-start;
       @extend %how__btn;
       @extend %how__btn--spec;
    }
    .how__btn--3 {
+      align-items: flex-start;
       @extend %how__btn;
       @extend %how__btn--spec;
       background:linear-gradient(rgb(245, 236, 255), #f9f5ff);
