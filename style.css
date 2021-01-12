@@ -24,7 +24,7 @@
 #how .how__btn--3, #how .how__btn, #how .how__box .how__btn--3 {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  width: 321px;
+  width: 291px;
   padding: 16px;
   box-shadow: #d8d8d8 1px 5px 5px;
   background: linear-gradient(white, #f0f0f0);
@@ -246,14 +246,6 @@
     transform: rotate(360deg);
   }
 }
-@keyframes yoo {
-  0% {
-    margin-left: 15px;
-  }
-  100% {
-    margin-left: 150px;
-  }
-}
 html {
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
@@ -351,7 +343,7 @@ header .arrow {
 #how h2 {
   display: flex;
   justify-content: center;
-  margin-left: -6.1em;
+  margin-left: -0.2em;
   opacity: 1;
 }
 @media only screen and (min-width: 1260px) {
@@ -434,15 +426,10 @@ header .arrow {
   }
 }
 #restau h2 {
-  margin-left: -7.6em;
+  margin-left: -0.2em;
   opacity: 1;
 }
 @media only screen and (min-width: 1260px) {
-  #restau h2 {
-    opacity: 0;
-  }
-}
-@media only screen and (min-width: 1040px) {
   #restau h2 {
     opacity: 0;
   }
