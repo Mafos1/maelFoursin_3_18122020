@@ -293,7 +293,6 @@ $footer : rgb(82, 82, 82);
    @if $breakpoint == desk {
        @media only screen and (min-width: 1340px) { @content };
    } 
-   // passer en 768 ajouter categorie //
    @if $breakpoint == tab {
        @media only screen and (min-width: 1150px) { @content };
    } 
