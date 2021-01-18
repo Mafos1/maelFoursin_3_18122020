@@ -291,13 +291,14 @@ $footer : rgb(82, 82, 82);
  @mixin responsive($breakpoint) {
 
    @if $breakpoint == desk {
-       @media only screen and (min-width: 1260px) { @content };
+       @media only screen and (min-width: 1340px) { @content };
    } 
+   // passer en 768 ajouter categorie //
    @if $breakpoint == tab {
-       @media only screen and (min-width: 1040px) { @content };
+       @media only screen and (min-width: 1150px) { @content };
    } 
-   @if $breakpoint == smal {
-      @media only screen and (min-width: 400px) { @content };
+   @if $breakpoint == smal { 
+      @media only screen and (min-width: 430px) { @content };
   } 
 }
 
@@ -427,7 +428,7 @@ z-index: -2;
       display: flex;
       justify-content: space-around;
       margin-right: 15%;
-      margin-left: 7%;
+      margin-left: 3%;
    }
    h2 {
       display: flex;
@@ -436,6 +437,7 @@ z-index: -2;
       opacity: 1;
       @include responsive(desk) {
       opacity: 0;
+      z-index: -30;
       }
    }
    .how__box {
@@ -517,6 +519,8 @@ z-index: -2;
       display: flex;
       flex-direction: inherit;
       justify-content: space-around;
+      margin-left: -150px;
+     
    }
    background-color: $greyBG;
    margin-top: 70px;
@@ -676,6 +680,7 @@ z-index: -2;
       justify-content: space-around;
       align-items: center;
       max-width: inherit; 
+      // flex-direction: column;
    }
    @extend %menu_Course;
    @extend %dishCards;
