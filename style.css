@@ -332,12 +332,12 @@ header .arrow {
 #how {
   display: block;
 }
-@media only screen and (min-width: 1260px) {
+@media only screen and (min-width: 1340px) {
   #how {
     display: flex;
     justify-content: space-around;
     margin-right: 15%;
-    margin-left: 7%;
+    margin-left: 3%;
   }
 }
 #how h2 {
@@ -346,9 +346,10 @@ header .arrow {
   margin-left: -0.2em;
   opacity: 1;
 }
-@media only screen and (min-width: 1260px) {
+@media only screen and (min-width: 1340px) {
   #how h2 {
     opacity: 0;
+    z-index: -30;
   }
 }
 #how .how__box .how__btn--num {
@@ -418,18 +419,19 @@ header .arrow {
   align-items: center;
   flex-direction: column;
 }
-@media only screen and (min-width: 1260px) {
+@media only screen and (min-width: 1340px) {
   #restau {
     display: flex;
     flex-direction: inherit;
     justify-content: space-around;
+    margin-left: -150px;
   }
 }
 #restau h2 {
   margin-left: -0.2em;
   opacity: 1;
 }
-@media only screen and (min-width: 1260px) {
+@media only screen and (min-width: 1340px) {
   #restau h2 {
     opacity: 0;
   }
@@ -491,7 +493,7 @@ header .arrow {
   top: 20px;
   font-size: 28px;
 }
-@media only screen and (min-width: 1040px) {
+@media only screen and (min-width: 1150px) {
   .heart_M {
     margin-left: 44%;
   }
@@ -512,7 +514,7 @@ header .arrow {
   position: relative;
   z-index: 5;
 }
-@media only screen and (min-width: 1040px) {
+@media only screen and (min-width: 1150px) {
   .backGround img {
     width: 750px;
     height: 440px;
@@ -523,7 +525,7 @@ header .arrow {
   }
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 430px) {
   .Box {
     margin-left: 3em;
   }
@@ -537,7 +539,7 @@ header .arrow {
   top: -50px;
   border-radius: 42px 41px 0px 0px;
 }
-@media only screen and (min-width: 1040px) {
+@media only screen and (min-width: 1150px) {
   .menu {
     max-width: inherit;
     height: 30em;
@@ -551,7 +553,7 @@ header .arrow {
   font-size: 25px;
   display: flex;
 }
-@media only screen and (min-width: 1040px) {
+@media only screen and (min-width: 1150px) {
   .menu .restauName {
     margin-left: 44%;
   }
@@ -561,7 +563,7 @@ header .arrow {
   margin-left: 4%;
   animation: fade ease-in-out 700ms both;
 }
-@media only screen and (min-width: 1040px) {
+@media only screen and (min-width: 1150px) {
   .course {
     display: flex;
     justify-content: space-around;
@@ -570,7 +572,7 @@ header .arrow {
   }
 }
 
-@media only screen and (min-width: 1040px) {
+@media only screen and (min-width: 1150px) {
   .course__type {
     margin-left: 80px;
   }
@@ -601,7 +603,7 @@ li {
   list-style: none;
   margin-top: 8px;
 }
-@media only screen and (min-width: 1260px) {
+@media only screen and (min-width: 1340px) {
   li {
     display: inline;
     justify-content: space-between;
